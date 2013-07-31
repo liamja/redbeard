@@ -1,0 +1,53 @@
+
+#********** windows template********** 
+
+# Windows image file caches
+Thumbs.db 
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+ 
+
+#********** osx template********** 
+
+.DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+ 
+
+#********** ruby template********** 
+
+*.gem
+*.rbc
+.bundle
+.config
+coverage
+InstalledFiles
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+
+# YARD artifacts
+.yardoc
+_yardoc
+doc/
+ 
+
+#********** sublimetext template********** 
+
+# SublimeText project files
+/*.sublime-project
+*.sublime-workspace
+ 

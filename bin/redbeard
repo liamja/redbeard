@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'redbeard'
+
+get '/announce' do
+    Redbeard.announce
+end
