@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors = ["Liam Anderson"]
   s.description = %q{A BitTorrent tracker.}
   s.email = %q{liam.anderson.91@gmail.com}
-  s.homepage  = %q{http://rubygems.org/gems/redbeard}
+  s.homepage  = %q{http://liamja.github.io/redbeard/}
   
   s.files = ["Rakefile", "lib/redbeard.rb", "bin/redbeard"]
   s.test_files  = ["spec/redbeard_spec.rb"]
