@@ -13,5 +13,5 @@ Installation
 License
 -------
 
-This code is released under a GNU General Public License, version 3.0 (GPLv3) 
-license.
+This code is released under an MIT License.
+See `LICENSE.md` for the full license text.
