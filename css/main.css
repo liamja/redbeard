@@ -1,3 +1,20 @@
+body {
+    font-family: 'Habibi', serif;
+}
+
+h1 {
+    font-family: 'IM Fell English', serif;
+}
+
+a {
+    transition: color 0.2s;
+}
+
 .navbar {
     border-radius: 0 0 4px 4px;
+}
+
+.jumbotron {
+    background: url('../img/9000231121_b6427f92c0_crop.jpg') left no-repeat;
+    padding: 40px 60px 60px;
 }
