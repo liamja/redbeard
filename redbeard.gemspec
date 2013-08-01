@@ -9,7 +9,8 @@ Gem::Specification.new do |s|
   s.description = %q{A BitTorrent tracker.}
   s.email = %q{liam.anderson.91@gmail.com}
   s.homepage  = %q{http://liamja.github.io/redbeard/}
-  
+  s.license = 'MIT'
+
   s.files = ["Rakefile", "lib/redbeard.rb", "bin/redbeard"]
   s.test_files  = ["spec/redbeard_spec.rb"]
   s.require_paths = ["lib"]
@@ -18,6 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency "sinatra"
   
+  s.add_development_dependency "rake"
   s.add_development_dependency "rack-test"
   s.add_development_dependency "rspec"
   s.add_development_dependency "ZenTest"
