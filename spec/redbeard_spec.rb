@@ -22,15 +22,20 @@ describe "Redbeard" do
     end
 
     context 'Announce' do
-        it 'should accept a valid Info Hash' do
+        it 'accepts a valid Info Hash' do
             get '/announce', {:INFO_HASH => '640FE84C613C17F663551D218689A64E8AEBEABE'}
             last_request.params['INFO_HASH'].should == '640FE84C613C17F663551D218689A64E8AEBEABE'
             # last_request.params['INFO_HASH'].bytesize.should == 20 * 2
         end
 
-        it 'should reject an Info Hash that is not 20 bytes' do
+        it 'rejects an Info Hash that is not 20 bytes' do
             get '/announce', {:INFO_HASH => '640FE84C613C17F663551D218689A64E8AEBEABEDEADBEEF'}
             last_response.should_not be_ok
+        end
+
+        it 'responds with a content type of text/plain' do
+            get '/announce'
+            last_response.headers['Content-Type'].should == 'text/plain'
         end
     end
 end
