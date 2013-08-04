@@ -1,7 +1,6 @@
 require 'redbeard'
 require 'rspec'
 require 'rack/test'
-require 'uri'
 
 ENV['RACK_ENV'] = 'test'
 
@@ -23,7 +22,7 @@ describe "Redbeard" do
     end
 
     context 'Announce' do
-        it 'should accept an Info Hash' do
+        it 'should accept a valid Info Hash' do
             get '/announce', {:INFO_HASH => '640FE84C613C17F663551D218689A64E8AEBEABE'}
             last_request.params['INFO_HASH'].should == '640FE84C613C17F663551D218689A64E8AEBEABE'
             # last_request.params['INFO_HASH'].bytesize.should == 20 * 2
