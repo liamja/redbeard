@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.summary = %q{redbeard!}
 
   s.add_runtime_dependency "sinatra"
+  s.add_runtime_dependency "bencode"
   
   s.add_development_dependency "rake"
   s.add_development_dependency "rack-test"
