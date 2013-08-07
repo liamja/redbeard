@@ -11,6 +11,12 @@ get '/announce' do
             halt "#{{"failure reason" => "Info Hash is not 20 bytes."}.bencode}"
         end
     end
+
+    unless params['PEER_ID'].nil?
+        if params['PEER_ID'].bytesize != 20 
+            halt "#{{"failure reason" => "Peer ID is not 20 bytes."}.bencode}"
+        end
+    end
 end
 
 get '/scrape' do
