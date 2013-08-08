@@ -54,5 +54,11 @@ describe "Redbeard" do
                 end
             end
         end
+
+        it 'returns a Failure Reason if Port is omitted' do
+            get '/announce', {:PORT => nil}
+            last_response.body.should == {"failure reason" => "Port is not specified."}.bencode
+        end
+        
     end
 end

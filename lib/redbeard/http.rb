@@ -17,8 +17,12 @@ get '/announce' do
             halt "#{{"failure reason" => "Peer ID is not 20 bytes."}.bencode}"
         end
     end
+
+    if params[:PORT].nil?
+        halt "#{{"failure reason" => "Port is not specified."}.bencode}"
+    end
 end
 
 get '/scrape' do
-    
+
 end
