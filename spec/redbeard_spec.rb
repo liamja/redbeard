@@ -60,6 +60,15 @@ describe "Redbeard" do
                     get '/announce', {:PEER_ID => "-BOWxxx-yyyyyyyyyyyy"}
                     last_response.body.should_not == {"failure reason" => "Peer ID is not 20 bytes."}.bencode
                 end
+                
+                it 'returns a Failure Reason if Peer ID is omitted' do
+                    get '/announce', {
+                        :INFO_HASH => "640FE84C613C17F663551D218689A64E8AEBEABE",
+                        :PEER_ID => nil,
+                        :PORT => 6887
+                    }
+                    last_response.body.should == {"failure reason" => "Peer ID is not specified."}.bencode
+                end
 
                 it 'returns a Failure Reason if Peer ID is not 20 bytes' do
                     get '/announce', {

@@ -14,8 +14,10 @@ get '/announce' do
         end
     end
 
-    unless params['PEER_ID'].nil?
-        if params['PEER_ID'].bytesize != 20 
+    if params[:PEER_ID].nil?
+        halt "#{{"failure reason" => "Peer ID is not specified."}.bencode}"
+    else
+        if params[:PEER_ID].bytesize != 20 
             halt "#{{"failure reason" => "Peer ID is not 20 bytes."}.bencode}"
         end
     end
