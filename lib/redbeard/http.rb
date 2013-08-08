@@ -6,8 +6,10 @@ before do
 end
 
 get '/announce' do
-    unless params['INFO_HASH'].nil?
-        if params['INFO_HASH'].bytesize != 40 
+    if params[:INFO_HASH].nil?
+        halt "#{{"failure reason" => "Info Hash is not specified."}.bencode}"
+    else
+        if params[:INFO_HASH].bytesize != 40 
             halt "#{{"failure reason" => "Info Hash is not 20 bytes."}.bencode}"
         end
     end
