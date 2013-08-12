@@ -12,6 +12,11 @@ describe "Redbeard" do
     end
 
     context 'HTTP' do
+        it 'set to listen on port 80' do
+            get '/'
+            app.settings.port.should == 80
+        end
+
         it 'has an Announce URI' do
             get '/announce'
             last_response.should be_ok

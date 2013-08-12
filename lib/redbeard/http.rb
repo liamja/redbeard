@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'uri'
 
+set :port, 80
+
 before do
     headers "Content-Type" => "text/plain"
 end
