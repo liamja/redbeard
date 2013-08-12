@@ -49,7 +49,11 @@ describe "Redbeard" do
                 end
 
                 it 'rejects an Info Hash that is not 20 bytes' do
-                    get '/announce', {:INFO_HASH => '640FE84C613C17F663551D218689A64E8AEBEABEDEADBEEF'}
+                    get '/announce', {
+                        :INFO_HASH => '640FE84C613C17F663551D218689A64E8AEBEABEDEADBEEF',
+                        :PEER_ID => nil,
+                        :PORT => 6887
+                    }
                     last_response.should be_ok
                     last_response.body.should == {"failure reason" => "Info Hash is not 20 bytes."}.bencode
                 end
