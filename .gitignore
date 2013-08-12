@@ -44,6 +44,9 @@ tmp
 _yardoc
 doc/
  
+# RSpec / Testing preferences
+.rspec
+.autotest
 
 #********** sublimetext template********** 
 
