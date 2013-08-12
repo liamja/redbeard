@@ -1,7 +1,11 @@
 require 'sinatra'
 require 'uri'
 
-set :port, 80
+# Set sensible, secure defaults.
+configure :production, :test do
+    disable :logging, :dump_errors
+    set :port, 80
+end
 
 before do
     headers "Content-Type" => "text/plain"

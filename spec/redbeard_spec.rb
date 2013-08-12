@@ -1,8 +1,8 @@
+ENV['RACK_ENV'] = 'test'
+
 require 'redbeard'
 require 'rspec'
 require 'rack/test'
-
-ENV['RACK_ENV'] = 'test'
 
 describe "Redbeard" do
     include Rack::Test::Methods
@@ -13,8 +13,19 @@ describe "Redbeard" do
 
     context 'HTTP' do
         it 'set to listen on port 80' do
-            get '/'
             app.settings.port.should == 80
+        end
+
+        it 'sessions disabled' do
+            app.settings.sessions.should be_false
+        end
+
+        it 'logging disabled' do
+            app.settings.logging.should be_false
+        end
+
+        it 'error dumps disabled' do
+            app.settings.dump_errors.should be_false
         end
 
         it 'has an Announce URI' do
